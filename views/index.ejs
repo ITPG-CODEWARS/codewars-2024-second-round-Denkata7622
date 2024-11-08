@@ -9,28 +9,32 @@
 <body>
     <div class="container">
     <h1>Url Shrinkator</h1>
-    <form action="" method="POST" class="my-4 form-inline">
-        <label for="fullUrl" class="sr-only">Url</label>
-        <input type="ulr" name="fullUrl" id="fullUrl">
-        <button type="submit">Shrink</button>
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <label for="fullUrl" class="visually-hidden">Url</label>
+        <input required placeholder="Url" type="ulr" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+        <button class="btn btn-success" type="submit">Shrink</button>
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Full Url</th>
-                <th>Short Url</th>
-                <th>Clicks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="https://github.com/ITPG-CODEWARS/codewars-2024-second-round-Denkata7622">https://github.com/ITPG-CODEWARS/codewars-2024-second-round-Denkata7622</a></td>
-                <td><a href="/numbers">numbers</a></td>
-                <td>10</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Full Url</th>
+                    <th>Short Url</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shortUrls.forEach(shortUrl => { %>
+                    <tr>
+                        <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                        <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                        <td><%= shortUrl.clicks %></td>
+                    </tr>    
+                <% }); %>
+            </tbody>
+        </table>    
+    </div>
 </div>
 </body>
 </html>
