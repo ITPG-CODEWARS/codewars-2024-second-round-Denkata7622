@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Title of the page displayed in the browser tab -->
+  <title>Login Form</title>
+  
+  <!-- Metadata for character encoding and responsive design -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.png" type="">
+
+  <!-- Link to external CSS for login page styling -->
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  
+  <!-- Link to Bootstrap CSS framework for responsive design and components -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  
+  <!-- Link to Font Awesome for using icons -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- jQuery slim version, needed for Bootstrap's JavaScript functionality -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+      <!-- Header section with navigation menu starts here -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <!-- Bootstrap navigation bar -->
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <!-- Brand name linked to the homepage -->
+            <a class="navbar-brand" href="/">
+              <span>
+                Shortify
+              </span>
+            </a>
+  
+            <!-- Button to toggle the menu on smaller screens -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+  
+            <!-- Collapsible menu content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Menu items -->
+              <ul class="navbar-nav">
+                <!-- Active home link -->
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Other links to different sections of the website -->
+                <li class="nav-item"><a class="nav-link" href="/about"> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/service">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/why">Why Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/team">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+
+                <!-- Search form -->
+                <form class="form-inline">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- End header section -->
+
+  <!-- Main container for the login form -->
+  <div class="container">
+    <div class="row px-3">
+      <!-- Card component for login form with responsive layout -->
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <!-- Placeholder for image on larger screens -->
+        <div class="img-left d-none d-md-flex"></div>
+
+        <!-- Card body containing the form elements -->
+        <div class="card-body">
+          <!-- Title of the form -->
+          <h4 class="title text-center mt-4">
+            Login into account
+          </h4>
+
+          <!-- Login form starts here -->
+          <form class="form-box px-3">
+            <!-- Email input field with icon -->
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="email" name="" placeholder="Email Address" tabindex="10" required>
+            </div>
+            
+            <!-- Password input field with icon -->
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="" placeholder="Password" required>
+            </div>
+
+            <!-- Remember me checkbox -->
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1" style="user-select: none;">Remember me</label>
+              </div>
+            </div>
+
+            <!-- Submit button for login -->
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase">
+                Login
+              </button>
+            </div>
+
+            <!-- Forgot password link -->
+            <div class="text-right">
+              <a href="#" class="forget-link">
+                Forget Password?
+              </a>
+            </div>
+
+            <!-- Text for alternative login methods -->
+            <div class="text-center mb-3">
+              or login with
+            </div>
+
+            <!-- Social media login buttons -->
+            <div class="row mb-3">
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-facebook">
+                  facebook
+                </a>
+              </div>
+
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-google">
+                  google
+                </a>
+              </div>
+
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-twitter">
+                  twitter
+                </a>
+              </div>
+            </div>
+
+            <!-- Divider line -->
+            <hr class="my-4">
+
+            <!-- Register link for users who don't have an account -->
+            <div class="text-center mb-2">
+              Don't have an account?
+              <a href="#" class="register-link">
+                Register here
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
