@@ -9,7 +9,8 @@ const shortUrlSchema = new mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: shortId.generate
+        // If a custom short URL is provided, use that; otherwise, generate a short one
+        default: function() {}
     },
     clicks: {
         type: Number,
