@@ -45,7 +45,7 @@
     </div>
 
     <!-- header section strats -->
-    <header class="header_section">
+    <header class="header_section" style="user-select: none;">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="/">
@@ -127,20 +127,23 @@
                     <div class="table-responsive">
                       <table class="table table-striped bg-light">
                           <thead>
-                              <tr>
+                              <tr style="user-select: none;">
                                   <th>Full Url</th>
                                   <th>Short Url</th>
                                   <th>Clicks</th>
                               </tr>
                           </thead>
                           <tbody>
-                              <% shortUrls.forEach(shortUrl => { %>
-                                  <tr>
-                                      <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-                                      <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
-                                      <td><%= shortUrl.clicks %></td>
-                                  </tr>    
-                              <% }); %>
+                            <% shortUrls.forEach(shortUrl => { %>
+                              <tr>
+                                <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                                <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                                <td><%= shortUrl.clicks %></td>
+                                <td>
+                                  <button class="delete-btn" style="border-radius: 25px; min-height: 15px; min-width: 15px; border-color: red; color: rgb(0, 0, 0); background-color: rgb(221, 17, 17); user-select: none;" data-short="<%= shortUrl.short %>">X</button>
+                                </td>
+                              </tr>
+                            <% }); %>
                           </tbody>
                       </table>    
                   </div>
@@ -149,6 +152,29 @@
               </div>
             </div>
           </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              document.querySelectorAll(".delete-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                  const shortUrl = this.getAttribute("data-short");
+            
+                  fetch(`/url/${shortUrl}`, {
+                    method: "DELETE",
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.success) {
+                      // Remove the row from the table
+                      this.closest("tr").remove();
+                    } else {
+                      alert("Error deleting URL");
+                    }
+                  })
+                  .catch(error => console.error("Error:", error));
+                });
+              });
+            });
+            </script>            
           <div class="carousel-item">
             <div class="container ">
               <div class="row">

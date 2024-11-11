@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const shortId = require('shortid')
 
+// Blueprint for shortUrl Scheme
 const shortUrlSchema = new mongoose.Schema({
     full: {
         type: String,
@@ -16,6 +17,11 @@ const shortUrlSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: 0
+    },
+    delete: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 })
 
