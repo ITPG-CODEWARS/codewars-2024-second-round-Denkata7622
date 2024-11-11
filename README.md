@@ -36,3 +36,13 @@ URL Shrinkator is a website that lets you shorten long URLs, create custom short
     node server.js
     ```
 4. Open `http://localhost:5000` in your browser to use the app.
+
+5. ## Technologies Used
+- **Node.js & Express**: Backend server and API.
+- **MongoDB**: Database to store URLs, custom URLs, and click counts.
+- **EJS**: Template engine for dynamic HTML rendering.
+
+## Project Purpose
+This project was created for the second round of CodeWars 2024/2025, focusing on creating a clean, functional URL shortener with added custom and management features. It’s designed to be user-friendly, with a range of additional pages to demonstrate a complete website experience.
+
+Good luck, and happy shrinking!
