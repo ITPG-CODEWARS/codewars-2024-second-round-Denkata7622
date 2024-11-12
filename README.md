@@ -48,6 +48,6 @@ URL Shrinkator is a website that lets you shorten long URLs, create custom short
 - **Express-Session**: Middleware for managing user sessions and ensuring secure user login.
 
 ## Project Purpose
-This project was created for the second round of CodeWars 2024/2025, focusing on creating a clean, functional URL shortener with added custom and management features. The addition of user authentication and user-specific URL visibility makes the application more secure and personalized. It’s designed to be user-friendly, with a range of additional pages to demonstrate a complete website experience.
+This project was created for the second round of CodeWars 2024/2025, focusing on creating a clean, functional URL shortener with added custom and various features. The addition of user authentication and user-specific URL visibility makes the application more secure and personalized. It’s designed to be user-friendly, with a range of additional pages to demonstrate a complete website experience.
 
 Good luck, and happy shrinking!
