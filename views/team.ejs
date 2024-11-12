@@ -75,9 +75,25 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/team">Team <span class="sr-only">(current)</span> </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
-              </li>
+                            <!-- Show Log in and register buttons if the user is not logged -->
+                            <% if (session.userId) { %>
+                              <li class="nav-item">
+                                <p class="nav-link">Welcome, <%= session.username %>!</p>
+                              </li>
+                              <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                  <button class="btn btn-success" style="background-color: red; border-color: red;" type="submit">Logout</button>
+                                </form>  
+                              </li>
+                            <% } else { %>
+                            <!-- Else Show: Welcome, <User>! -->
+                              <li class="nav-item">
+                                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/register">Register</a>
+                              </li>
+                            <% } %>              
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
