@@ -75,6 +75,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/team">Team</a>
               </li>
+              <!-- Show Log in and register buttons if the user is not logged -->
               <% if (session.userId) { %>
                 <li class="nav-item">
                   <p class="nav-link">Welcome, <%= session.username %>!</p>
@@ -85,6 +86,7 @@
                   </form>  
                 </li>
               <% } else { %>
+              <!-- Else Show: Welcome, <User>! -->
                 <li class="nav-item">
                   <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
                 </li>
