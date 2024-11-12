@@ -1,16 +1,23 @@
 const mongoose = require('mongoose')
 const shortId = require('shortid')
+const User = require('./User')
 
 // Blueprint for shortUrl Scheme
 const shortUrlSchema = new mongoose.Schema({
-    full: {
+    // Creator field used to assosiate different URLs to different accounts
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',  // Reference to the User model
+        required: true  // Ensure that a user is always associated
+      },
+        full: {
         type: String,
         required: true
     },
     short: {
         type: String,
         required: true,
-        // If a custom short URL is provided, use that; otherwise, generate a short one
+        // If There is no custom URL, then generate a random one
         default: shortId.generate
     },
     clicks: {
@@ -25,4 +32,5 @@ const shortUrlSchema = new mongoose.Schema({
     }
 })
 
+// Export ShortUrl model
 module.exports = mongoose.model('ShortUrl', shortUrlSchema)

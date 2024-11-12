@@ -98,34 +98,39 @@
                 <div class="col-md-6 ">
                   <div class="detail-box">
                     <h1>
-                    <!-- Login Form -->
-                    <h1 class="text-center" style="color: aliceblue;">Login</h1>
-                    <form action="/login" method="POST" class="my-4">
+                    <!-- Register Form -->
+                    <h1 class="text-center" style="color: aliceblue;">Register</h1>
+                    <form action="/register" method="POST" class="my-4">
+
+                        <!-- Heading for Registration -->
+                        <h5 class="text-center" style="color: rgb(2, 105, 196); font-weight: bold; font-size: 23px;">Register Your Account Today!</h5>
 
                         <!-- Username Input -->
-                        <div class="form-group" style="position: relative; left: 75px;">
-                            <label for="username" style="color: aliceblue; font-size: 20px;">Username</label>
-                            <input required placeholder="Username" type="text" name="username" id="username" class="form-control" style="width: 100%; max-width: 400px;">
+                        <div class="form-group" style="max-width: 400px; margin: 0 auto;">
+                            <label for="Username" style="color: aliceblue; font-size: 20px; display: block;">Username</label>
+                            <input required placeholder="Username" type="text" name="username" id="Username" class="form-control">
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="form-group" style="max-width: 400px; margin: 0 auto;">
+                            <label for="Email" style="color: aliceblue; font-size: 20px; display: block;">Email</label>
+                            <input required placeholder="Email" type="email" name="email" id="Email" class="form-control">
                         </div>
 
                         <!-- Password Input -->
-                        <div class="form-group" style="position: relative; left: 75px;">
-                            <label for="password" style="color: aliceblue; font-size: 20px;">Password</label>
-                            <input required placeholder="Password" type="password" name="password" id="password" class="form-control" style="width: 100%; max-width: 400px;">
+                        <div class="form-group" style="max-width: 400px; margin: 0 auto;">
+                            <label for="Password" style="color: aliceblue; font-size: 20px; display: block;">Password</label>
+                            <input required placeholder="Password" type="password" name="password" id="Password" class="form-control">
                         </div>
-
                         <!-- Submit Button -->
                         <div class="text-center">
-                            <button class="btn btn-success" type="submit" style="width: 100%; max-width: 400px;">Login</button>
+                            <button class="btn btn-success" type="submit" style="width: 100%; max-width: 400px; margin-top: 10px;">Sign Up</button>
                         </div>
-                    </form>
 
-                    <!-- No Account Section -->
-                    <h5 class="text-center" style="color: aliceblue;">No Account?</h5>
-                    <div class="text-center">
-                        <a href="/register" style="color: rgb(0, 124, 232); font-size: 20px; font-weight: bold;">Create One</a>
-                    </div>
-                    <!-- End of Login Form -->
+                        <!-- Link to Login -->
+                        <h5 class="text-center" style="color: aliceblue;">Already Have an Account? <a href="/login" style="color: rgb(0, 124, 232); font-size: 20px; font-weight: bold;">Log In</a></h5>
+                    </form>
+                    <!-- End of Register Form -->
                   </div>
                 </div>
                 <div class="col-md-6">

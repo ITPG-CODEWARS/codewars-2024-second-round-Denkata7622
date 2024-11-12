@@ -75,9 +75,23 @@
               <li class="nav-item">
                 <a class="nav-link" href="/team">Team</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
-              </li>
+              <% if (session.userId) { %>
+                <li class="nav-item">
+                  <p class="nav-link">Welcome, <%= session.username %>!</p>
+                </li>
+                <li class="nav-item">
+                  <form action="/logout" method="POST">
+                    <button class="btn btn-success" style="background-color: red; border-color: red;" type="submit">Logout</button>
+                  </form>  
+                </li>
+              <% } else { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+              <% } %>
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
@@ -107,7 +121,8 @@
         <input required placeholder="Url" type="Url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
         <button class="btn btn-success" type="submit">Shrink</button>
     </form>
-    <h5 style="position: relative; color: aliceblue; left: 40px;">You can see Your Links here ⟶</h5>
+    <h5 style="position: relative; color: aliceblue; left: 40px;">You can see Your Links</h5>
+    <a style="position: relative; color: rgb(0, 124, 232); top: -35px; left: 260px; font-size: 20px; font-weight: bold" data-target="#customCarousel1" data-slide-to="1">Here ⟶</a>
     <!-- End of ShortUrl Maker -->
                   </div>
                 </div>
@@ -124,6 +139,7 @@
               <div class="row">
                 <div class="col-md-6 ">
                   <div class="detail-box">
+                    <!-- Short Link Table -->
                     <div class="table-responsive">
                       <table class="table table-striped bg-light">
                           <thead>
@@ -140,13 +156,14 @@
                                 <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
                                 <td><%= shortUrl.clicks %></td>
                                 <td>
-                                  <button class="delete-btn" style="border-radius: 25px; min-height: 15px; min-width: 15px; border-color: red; color: rgb(0, 0, 0); background-color: rgb(221, 17, 17); user-select: none;" data-short="<%= shortUrl.short %>">X</button>
+                                  <button class="delete-btn" data-short="<%= shortUrl.short %>"><img src="images/delete_icon.png"  alt="X" style="max-width: 15px"></button>
                                 </td>
                               </tr>
                             <% }); %>
                           </tbody>
                       </table>    
                   </div>
+                  <!-- End of Short Link Table -->
                 </div>
                 </div>
               </div>
